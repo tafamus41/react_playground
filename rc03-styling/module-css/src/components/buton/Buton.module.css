@@ -1,0 +1,14 @@
+.title {
+    text-align: center;
+    border: 2px solid blue;
+    width: 150px;
+    margin:auto;
+}
+
+.btnBlue {
+    background-color: blue;
+}
+
+.cursor-pointer {
+    cursor:pointer;
+}

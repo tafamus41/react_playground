@@ -1,0 +1,19 @@
+.title {
+    text-align:center;
+    background-color: bisque;
+}
+
+.images {
+    width:300px;
+}
+
+.card > .title{
+    text-align:center;
+    background-color: bisque;
+}
+.card {
+    > .title{
+        text-align:center;
+        background-color: bisque;
+    }
+}
