@@ -1,10 +1,13 @@
-
+import Container from "react-bootstrap/Container"
 
 function App() {
   return (
-    <div>
+    // <div className="container">
+    //   Hello React
+    // </div>
+    <Container>
       Hello React
-    </div>
+    </Container>
   );
 }
 
