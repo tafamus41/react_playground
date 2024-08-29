@@ -1,30 +1,21 @@
 import Container from "react-bootstrap/Container";
+import { data } from "../../helpers/data";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
 
-import { data } from "../../helpers/data";
+import LegendCard from "./LegendCard";
 
 const LegendContainer = () => {
+  
+  // console.log(data);
   return (
     <Container>
       <Row>
-        {data.map(legend=><Col>
-          <Card style={{ width: "18rem" }}>
-            <Card.Img variant="top" src={legend.img} />
-            <Card.Body>
-              <Card.Title>{legend.name}</Card.Title>
-              <ul className="m-auto">
-                {legend.statistics.map(item=><li className="list-unstyled h5 text-start">🏈{item}</li> )}
-              </ul>
-            </Card.Body>
-            <Card.Footer>
-              Career Years:{legend.official_career}
-            </Card.Footer>
-          </Card>
-        </Col>)}
-        
+        {data.map((legend) => (
+          <LegendCard key={legend.id} legend={legend}/>
+        ))}
       </Row>
     </Container>
   );
