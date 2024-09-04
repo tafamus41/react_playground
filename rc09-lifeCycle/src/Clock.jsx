@@ -32,9 +32,13 @@ import moment from "moment";
 
 const Clock = () => {
   const [zaman, setZaman] = useState(moment());
-  setInterval(() => {
-    
-  }, 1000);
+
+  useEffect(()=>{const timE = setInterval(() => {
+    console.log("merhaba");
+    setZaman(moment())
+  },1000 );
+},[]  )
+
   return (
     <div>
       {zaman.format("HH:")}:{zaman.format("mm")}:{zaman.format("ss")}
