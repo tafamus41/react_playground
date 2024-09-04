@@ -36,7 +36,10 @@ const Clock = () => {
   useEffect(()=>{const timE = setInterval(() => {
     console.log("merhaba");
     setZaman(moment())
-  },1000 );
+  },1000);
+  return()=>{
+    console.log("component öldü");
+  }
 },[]  )
 
   return (
