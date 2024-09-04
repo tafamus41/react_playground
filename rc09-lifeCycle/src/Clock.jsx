@@ -46,6 +46,7 @@ const Clock = () => {
   return (
     <div>
       {zaman.format("HH:")}:{zaman.format("mm")}:{zaman.format("ss")}
+      <h1 className="btn btn-primary">SAYAC:{sayac}</h1>
     </div>
   );
 };
