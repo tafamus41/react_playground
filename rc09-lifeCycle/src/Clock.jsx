@@ -39,6 +39,7 @@ const Clock = () => {
   },1000);
   return()=>{
     console.log("component öldü");
+    clearInterval(timE)
   }
 },[]  )
 
