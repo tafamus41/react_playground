@@ -32,6 +32,7 @@ import moment from "moment";
 
 const Clock = () => {
   const [zaman, setZaman] = useState(moment());
+  const[sayac,setSayac]=useState(0)
 
   useEffect(()=>{const timE = setInterval(() => {
     // console.log("merhaba");
@@ -43,10 +44,14 @@ const Clock = () => {
   }
 },[]  )
 
+useEffect(()=>{
+  alert("sayac arttırıldı")
+},[sayac])
+
   return (
     <div>
       {zaman.format("HH:")}:{zaman.format("mm")}:{zaman.format("ss")}
-      <h1 className="btn btn-primary">SAYAC:{sayac}</h1>
+      <h1 className="btn btn-primary" onClick={()=>setSayac}>SAYAC:{sayac}</h1>
     </div>
   );
 };
