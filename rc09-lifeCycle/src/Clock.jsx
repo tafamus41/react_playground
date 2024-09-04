@@ -28,12 +28,18 @@ import { useEffect, useState } from "react";
 // //*     //* componentWillUnmount code */
 // //!   };
 // //! }, [var1, var2]);
-import moment from "moment"
+import moment from "moment";
 
 const Clock = () => {
+  const [zaman, setZaman] = useState(moment());
+  setInterval(() => {
+    
+  }, 1000);
   return (
-    <div>Clock</div>
-  )
-}
+    <div>
+      {zaman.format("HH:")}:{zaman.format("mm")}:{zaman.format("ss")}
+    </div>
+  );
+};
 
-export default Clock
+export default Clock;
