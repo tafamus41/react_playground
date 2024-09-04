@@ -34,7 +34,7 @@ const Clock = () => {
   const [zaman, setZaman] = useState(moment());
 
   useEffect(()=>{const timE = setInterval(() => {
-    console.log("merhaba");
+    // console.log("merhaba");
     setZaman(moment())
   },1000);
   return()=>{
