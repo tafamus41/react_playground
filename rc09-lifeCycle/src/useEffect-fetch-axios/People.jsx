@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const People = () => {
   return (
-    <div>People</div>
-  )
-}
+    <div>
+      <button>SHOW</button>
+    </div>
+  );
+};
 
-export default People
+export default People;
