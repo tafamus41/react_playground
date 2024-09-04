@@ -1,3 +1,4 @@
+
 // //?==================================================================
 // //?                       USEEFFECT HOOK
 // //?==================================================================
@@ -28,32 +29,52 @@ import { useEffect, useState } from "react";
 // //*     //* componentWillUnmount code */
 // //!   };
 // //! }, [var1, var2]);
-import moment from "moment";
+
+import moment from "moment"
+
 
 const Clock = () => {
   const [zaman, setZaman] = useState(moment());
+
   const[sayac,setSayac]=useState(0)
 
-  useEffect(()=>{const timE = setInterval(() => {
-    // console.log("merhaba");
-    setZaman(moment())
-  },1000);
-  return()=>{
-    console.log("component öldü");
-    clearInterval(timE)
-  }
-},[]  )
+  //!component ilk yüklendiğinde çalış componentDidMount()
+  useEffect(() => {
+    const timE = setInterval(() => {
+      console.log("merhaba");
+
+      setZaman(moment());
+    }, 1000);
+
+    //!component kapandığında yada başka sayfaya gidildiğinde çalışmamız dursun istersek alttaki return ü yazıyoruz
+    //!componentWillUnmount()
+    return () => {
+      console.log("component öldü");
+
+      clearInterval(timE);
+    };
+  }, []);
+
+//!component update edildiğinde çalış componentDidUpdate()
 
 useEffect(()=>{
+
   alert("sayac arttırıldı")
+  
 },[sayac])
+
+
 
   return (
     <div>
-      {zaman.format("HH:")}:{zaman.format("mm")}:{zaman.format("ss")}
-      <h1 className="btn btn-primary" onClick={()=>setSayac}>SAYAC:{sayac}</h1>
+      {zaman.format("HH")}:{zaman.format("mm")}:{zaman.format("ss")}
+
+      <h1 className="text-danger">SAYAC: {sayac}</h1>
+      <button className="btn btn-primary" 
+      onClick={()=>setSayac(sayac+1)}
+      >ARTTIR </button>
     </div>
   );
-};
+}
 
-export default Clock;
+export default Clock
