@@ -1,9 +1,9 @@
-
+import React from "react"
 
 const People = () => {
   return (
     <div>
-      <button>SHOW</button>
+      People
     </div>
   );
 };
