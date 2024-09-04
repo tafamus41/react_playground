@@ -7,7 +7,7 @@ import Clock from './Clock';
 import People from "./useEffect-fetch-axios/People";
 
 const App = () => {
-  const[goster,setGoster]=useState(true)
+  // const[goster,setGoster]=useState(true)
   return (
     <div className="text-center mt-4 container">
       {/* <button onClick={()=>setGoster(!goster)} className="btn btn-danger">SHOW</button> */}
