@@ -11,8 +11,8 @@ const App = () => {
     <div className="text-center mt-4 container">
       <button onClick={()=>setGoster(!goster)} className="btn btn-danger">SHOW</button>
       {/* {goster && <LifeCycleMethods/>} */}
-      {goster&& <Clock/>}
-      {/* <People/> */}
+      {/* {goster&& <Clock/>} */}
+      <People/>
     </div>
    
   );
