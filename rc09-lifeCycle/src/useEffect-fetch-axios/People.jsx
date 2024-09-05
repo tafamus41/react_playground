@@ -4,12 +4,21 @@ const People = () => {
   const [people, setPeople] = useState([]);
 
   //! 1.yol fetch then yapısı
+  // useEffect(() => {
+  //   fetch("https://reqres.in/api/users")
+  //     .then((res) => res.json())
+  //     .then((veri) => setPeople(veri.data));
+  // }, []);
+//! 2.yol fetch async await
+const getir=async()=>{
+  const res=await fetch("https://reqres.in/api/users");
+  const veri=await res.json()
+  setPeople(veri.data);
+}
 
-  useEffect(() => {
-    fetch("https://reqres.in/api/users")
-      .then((res) => res.json())
-      .then((veri) => setPeople(veri.data));
-  }, []);
+useEffect(()=>{
+  getir()
+},[])
 
   return (
     <div className="container text-center mt-4">
