@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
+import AddBilgi from "../components/AddBilgi";
+import BilgiList from "../components/BilgiList";
 
 const Home = () => {
+  const [tutorials, setTutorials] = useState([])
+  const url = "https://tutorial-api.fullstack.clarusway.com/tutorials/";
+  
   return (
-    <div>Home</div>
-  )
-}
+    <div>
+      <AddBilgi />
+      <BilgiList />
+    </div>
+  );
+};
 
-export default Home
+export default Home;
