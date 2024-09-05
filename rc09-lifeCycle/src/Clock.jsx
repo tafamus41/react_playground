@@ -32,7 +32,6 @@ import { useEffect, useState } from "react";
 
 import moment from "moment"
 
-
 const Clock = () => {
   const [zaman, setZaman] = useState(moment());
 
@@ -41,7 +40,7 @@ const Clock = () => {
   //!component ilk yüklendiğinde çalış componentDidMount()
   useEffect(() => {
     const timE = setInterval(() => {
-      console.log("merhaba");
+      // console.log("merhaba");
 
       setZaman(moment());
     }, 1000);
