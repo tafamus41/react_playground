@@ -7,8 +7,11 @@ const Home = () => {
   const url = "https://tutorial-api.fullstack.clarusway.com/tutorials/";
   
 
-const getBilgiler
-
+const getBilgiler=async()=>{
+const res=await axios.get(url)
+setTutorials(res.data)
+}
+// getBilgiler()
   return (
     <div>
       <AddBilgi />
