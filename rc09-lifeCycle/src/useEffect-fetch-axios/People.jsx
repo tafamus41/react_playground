@@ -11,7 +11,7 @@ useEffect(()=>{
 
   return (
     <div>
-      People
+      
     </div>
   );
 };
