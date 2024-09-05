@@ -6,6 +6,9 @@ const Home = () => {
   const [tutorials, setTutorials] = useState([])
   const url = "https://tutorial-api.fullstack.clarusway.com/tutorials/";
   
+
+const getBilgiler
+
   return (
     <div>
       <AddBilgi />
