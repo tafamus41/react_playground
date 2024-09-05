@@ -40,8 +40,6 @@ const Clock = () => {
   //!component ilk yüklendiğinde çalış componentDidMount()
   useEffect(() => {
     const timE = setInterval(() => {
-      // console.log("merhaba");
-
       setZaman(moment());
     }, 1000);
 
