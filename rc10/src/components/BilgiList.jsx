@@ -28,6 +28,7 @@ const BilgiList = ({ tutorials,deleteBilgi }) => {
                   type="button"
                   size={22}
                   className="text-danger cursor-pointer"
+                  onClick={()=>deleteBilgi(id)}
                 />
 
                 <FaEdit
