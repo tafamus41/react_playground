@@ -3,7 +3,7 @@ import { FaEdit } from "react-icons/fa";
 import EditBilgi from "./EditBilgi";
 import React, { useState } from "react";
 
-const BilgiList = ({ tutorials, deleteBilgi }) => {
+const BilgiList = ({ tutorials, deleteBilgi,putBilgi }) => {
   const [editItem, setEditItem] = useState("");
 
   // console.log(tutorials);
@@ -47,7 +47,7 @@ const BilgiList = ({ tutorials, deleteBilgi }) => {
           ))}
         </tbody>
       </table>
-      <EditBilgi editItem={editItem} setEditItem={setEditItem} />
+      <EditBilgi editItem={editItem} setEditItem={setEditItem} putBilgi={putBilgi}/>
     </div>
   );
 };
