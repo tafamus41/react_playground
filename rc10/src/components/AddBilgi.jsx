@@ -1,3 +1,5 @@
+import React,{useState} from "react"
+
 const AddBilgi = ({ postBilgiler }) => {
   const [baslik, setBaslik] = useState("");
   const [desc, setDesc] = useState("");
