@@ -1,6 +1,7 @@
 
 const AddBilgi = () => {
-
+const [baslik, setBaslik] = useState("")
+const [desc, setDesc] = useState("")
 
   
   return (
@@ -17,6 +18,7 @@ const AddBilgi = () => {
             id="title"
             placeholder="Enter your title"
             required
+            onChange={(e)=>setBaslik(e.target.value)}
        
           />
         </div>
@@ -30,7 +32,7 @@ const AddBilgi = () => {
             id="desc"
             placeholder="Enter your Description"
             required
-         
+            onChange={(e)=>setDesc(e.target.value)}
           />
         </div>
         <button type="submit" className="btn btn-danger mb-4">
