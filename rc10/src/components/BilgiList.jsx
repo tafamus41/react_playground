@@ -40,14 +40,14 @@ const BilgiList = ({ tutorials, deleteBilgi }) => {
                   size={20}
                   type="button"
                   className="me-2 text-warning cursor-pointer"
-                  onClick={() => setEditItem({title,description})}
+                  onClick={() => setEditItem({title,description,id})}
                 />
               </td>
             </tr>
           ))}
         </tbody>
       </table>
-      <EditBilgi />
+      <EditBilgi editItem={editItem} setEditItem={setEditItem} />
     </div>
   );
 };
