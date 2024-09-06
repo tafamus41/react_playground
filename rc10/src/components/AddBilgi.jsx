@@ -1,13 +1,12 @@
+const AddBilgi = ({ postBilgiler }) => {
+  const [baslik, setBaslik] = useState("");
+  const [desc, setDesc] = useState("");
 
-const AddBilgi = () => {
-const [baslik, setBaslik] = useState("")
-const [desc, setDesc] = useState("")
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    postBilgiler({title:baslik,description:desc});
+  };
 
-const handleSubmit=(e)=>{
-e.preventDefault()
-
-}
-  
   return (
     <div className="container text-center mt-4">
       <h1 className="display-6 text-danger">Add Your Tutorial</h1>
@@ -22,8 +21,7 @@ e.preventDefault()
             id="title"
             placeholder="Enter your title"
             required
-            onChange={(e)=>setBaslik(e.target.value)}
-       
+            onChange={(e) => setBaslik(e.target.value)}
           />
         </div>
         <div className="mb-3">
@@ -36,7 +34,7 @@ e.preventDefault()
             id="desc"
             placeholder="Enter your Description"
             required
-            onChange={(e)=>setDesc(e.target.value)}
+            onChange={(e) => setDesc(e.target.value)}
           />
         </div>
         <button type="submit" className="btn btn-danger mb-4">

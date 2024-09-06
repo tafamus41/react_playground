@@ -23,10 +23,15 @@ const deleteBilgi=async(id)=>{
   await axios.delete(`${url}${id}/`)
   getBilgiler()
 }
+//!POST - VERİ GÖNDERME
+const postBilgiler=async(yeniVeri)=>{
+ await axios.post(url,yeniVeri)
+
+}
 
   return (
     <div>
-      <AddBilgi />
+      <AddBilgi postBilgiler={postBilgiler} />
       <BilgiList deleteBilgi={deleteBilgi} tutorials={tutorials}/>
     </div>
   );
