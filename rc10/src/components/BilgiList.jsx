@@ -1,8 +1,11 @@
 import { AiFillDelete } from "react-icons/ai";
 import { FaEdit } from "react-icons/fa";
 import EditBilgi from "./EditBilgi";
+import React,{useState} from "react"
 
 const BilgiList = ({ tutorials,deleteBilgi }) => {
+const [editItem, setEditItem] = useState("")
+
   // console.log(tutorials);
   return (
     <div className="container mt-4">
@@ -37,6 +40,7 @@ const BilgiList = ({ tutorials,deleteBilgi }) => {
                   size={20}
                   type="button"
                   className="me-2 text-warning cursor-pointer"
+
                 />
               </td>
             </tr>
