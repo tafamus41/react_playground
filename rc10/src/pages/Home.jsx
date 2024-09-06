@@ -7,6 +7,7 @@ const Home = () => {
   const [tutorials, setTutorials] = useState([]);
   const url = "https://tutorial-api.fullstack.clarusway.com/tutorials/";
 
+  //!GET-READ
   const getBilgiler = async () => {
     const res = await axios.get(url);
     // console.log(res.data);
@@ -16,10 +17,16 @@ const Home = () => {
   useEffect(() => {
     getBilgiler();
   }, []);
+
+//!DELETE
+const deleteBilgi=async(id)=>{
+  await axios.delete(`${url}${id}/`)
+}
+
   return (
     <div>
       <AddBilgi />
-      <BilgiList tutorials={tutorials}/>
+      <BilgiList deleteBilgi={deleteBilgi} tutorials={tutorials}/>
     </div>
   );
 };
