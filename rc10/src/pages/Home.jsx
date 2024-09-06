@@ -1,23 +1,25 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import AddBilgi from "../components/AddBilgi";
 import BilgiList from "../components/BilgiList";
+import axios from "axios";
 
 const Home = () => {
   const [tutorials, setTutorials] = useState([]);
   const url = "https://tutorial-api.fullstack.clarusway.com/tutorials/";
 
-  useEffect(() => {
-    const getBilgiler = async () => {
-      const res = await axios.get(url);
-      setTutorials(res.data);
-    };
-  }, []);
+  const getBilgiler = async () => {
+    const res = await axios.get(url);
+    // console.log(res.data);
+    setTutorials(res.data);
+  }
 
-  // getBilgiler()
+  useEffect(() => {
+    getBilgiler();
+  }, []);
   return (
     <div>
       <AddBilgi />
-      <BilgiList />
+      <BilgiList tutorials={tutorials}/>
     </div>
   );
 };
