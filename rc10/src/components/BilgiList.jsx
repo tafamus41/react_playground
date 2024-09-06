@@ -2,7 +2,7 @@ import { AiFillDelete } from "react-icons/ai";
 import { FaEdit } from "react-icons/fa";
 import EditBilgi from "./EditBilgi";
 
-const BilgiList = ({ tutorials }) => {
+const BilgiList = ({ tutorials,deleteBilgi }) => {
   // console.log(tutorials);
   return (
     <div className="container mt-4">
