@@ -3,8 +3,10 @@ const AddBilgi = ({ postBilgiler }) => {
   const [desc, setDesc] = useState("");
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    postBilgiler({title:baslik,description:desc});
+    e.preventDefault()
+    postBilgiler({title:baslik,description:desc})
+    setBaslik("")
+    setDesc("")
   };
 
   return (
@@ -22,6 +24,7 @@ const AddBilgi = ({ postBilgiler }) => {
             placeholder="Enter your title"
             required
             onChange={(e) => setBaslik(e.target.value)}
+            value={baslik}
           />
         </div>
         <div className="mb-3">
@@ -35,6 +38,7 @@ const AddBilgi = ({ postBilgiler }) => {
             placeholder="Enter your Description"
             required
             onChange={(e) => setDesc(e.target.value)}
+            value={desc}
           />
         </div>
         <button type="submit" className="btn btn-danger mb-4">

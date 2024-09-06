@@ -26,7 +26,8 @@ const deleteBilgi=async(id)=>{
 //!POST - VERİ GÖNDERME
 const postBilgiler=async(yeniVeri)=>{
  await axios.post(url,yeniVeri)
-
+ 
+ getBilgiler()
 }
 
   return (
