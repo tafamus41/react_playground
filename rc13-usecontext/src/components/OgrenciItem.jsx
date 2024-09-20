@@ -13,7 +13,9 @@ const OgrenciItem = () => {
             </h3>
             <h4>EMAİL:{student.email}</h4>
             <h4>AGE:{student.age}</h4>
-            COLOR: <input type="text" value={student.color}/>
+            COLOR: <input type="text" value={student.color}
+            onChange={(e)=>changeColor(e.target.value)}
+            />
            </div>     
             ))
         }
