@@ -5,7 +5,7 @@ export const StudentContext = createContext();
 function App() {
   const [students, setStudents] = useState(data);
 const changeColor=(id,newRenk)=>{
-  setStudents(students.map((a)=>a.id===id && {...a,color:newRenk}))
+  setStudents(students.map((a)=>a.id===id ? {...a,color:newRenk}:a))
 
 }
 
