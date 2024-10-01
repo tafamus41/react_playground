@@ -1,7 +1,7 @@
 import React from "react";
 import OgrenciItem from "./OgrenciItem";
 
-const ogrenciList = () => {
+const OgrenciList = () => {
   return (
     <div>
       <img
@@ -16,4 +16,4 @@ const ogrenciList = () => {
   );
 };
 
-export default ogrenciList;
+export default OgrenciList;
