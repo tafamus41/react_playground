@@ -1,5 +1,5 @@
 import React from 'react'
-import OgrenciList from './OgrenciItem'
+import OgrenciList from './OgrenciList'
 
 const Home = () => {
   return (
