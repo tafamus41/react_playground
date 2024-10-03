@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 function App() {
   return (
     <Container maxWidth={"md"}>
-      <Typography variant="h3" component="h1" gutterBottom >Hello MUI</Typography>
+      <Typography align="center" variant="h3" component="h1" gutterBottom >Hello MUI</Typography>
       <Home/>
     </Container>
   );
