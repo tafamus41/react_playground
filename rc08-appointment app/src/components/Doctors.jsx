@@ -1,4 +1,5 @@
-import Container from "react-bootstrap/Container"
+import Container from "react-bootstrap/Container";
+import {doctorData} from "../helper/data";
 
 const Doctors = () => {
   return (
