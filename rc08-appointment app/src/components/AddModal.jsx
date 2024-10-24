@@ -38,8 +38,6 @@ function AddModal() {
           </Button></div>
           </Form>
         </Modal.Body>
-        <Modal.Footer>         
-        </Modal.Footer>
       </Modal>
     </>
   );
