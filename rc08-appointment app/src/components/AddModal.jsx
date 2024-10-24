@@ -1,20 +1,14 @@
-import { useState } from "react";
+// import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 
-function AddModal() {
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
+function AddModal({handleClose,show}) {
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        Launch demo modal
-      </Button>
-      <Modal show={show} onHide={handleClose}>
+      <Modal
+        show={show} onHide={handleClose}
+      >
         <Modal.Header closeButton>
           <Modal.Title>Appointment for drname</Modal.Title>
         </Modal.Header>
@@ -29,13 +23,18 @@ function AddModal() {
               <Form.Label>Date</Form.Label>
               <Form.Control type="datetime-local" placeholder="Date" />
             </Form.Group>
-            <div className="text-center"> 
-            <Button type="submit" variant="success" className="me-2">
-            Save
-          </Button>
-          <Button type="button" variant="danger" onClick={handleClose}>
-            Close
-          </Button></div>
+            <div className="text-center">
+              <Button type="submit" variant="success" className="me-2">
+                Save
+              </Button>
+              <Button
+                type="button"
+                variant="danger"
+                //   onClick={handleClose}
+              >
+                Close
+              </Button>
+            </div>
           </Form>
         </Modal.Body>
       </Modal>
