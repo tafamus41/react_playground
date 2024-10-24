@@ -3,14 +3,14 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 
-function AddModal({handleClose,show}) {
+function AddModal({handleClose,show,drName}) {
   return (
     <>
       <Modal
         show={show} onHide={handleClose}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Appointment for drname</Modal.Title>
+          <Modal.Title>Appointment for {drName}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
