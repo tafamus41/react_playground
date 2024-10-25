@@ -12,7 +12,9 @@ const AppointmentList = ({ appointments }) => {
       {appointments.map(({ id, patient, consulted, doctor, day }) => (
         <div className={consulted?"appointments consulted":"appointments"} >
           <Row className="justify-content-between align-items-center" >
-            <Col md={6}>
+            <Col 
+            md={6}
+            >
               <h4>{patient}</h4>
               <h5>{doctor}</h5>
             </Col>
