@@ -4,9 +4,21 @@ import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import { useState } from "react";
 
-function AddModal({handleClose,show,drName}) {
+function AddModal({handleClose,show,drName,handleAdd}) {
 const [name, setName] = useState("")
 const [date, setDate] = useState("")
+
+const handleSubmit=(e)=>{
+    e.preventDefault()
+    const newAppointment={
+        id:new Date().getTime(),
+        patient:name,
+        day:date,
+        consulted:false,
+        doctor:drName,
+    }
+    handleAdd(newAppointment)
+}
 
   return (
     <>
@@ -17,7 +29,7 @@ const [date, setDate] = useState("")
           <Modal.Title>Appointment for {drName}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
+          <Form onSubmit={handleSubmit} >
             <Form.Group className="mb-3" controlId="name">
               <Form.Label>Patient Name</Form.Label>
               <Form.Control onChange={(e)=>setName(e.target.value)} type="text" placeholder="Enter name" />
