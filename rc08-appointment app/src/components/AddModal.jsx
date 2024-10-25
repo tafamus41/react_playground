@@ -18,6 +18,7 @@ const handleSubmit=(e)=>{
         doctor:drName,
     }
     handleAdd(newAppointment)
+    handleClose()
 }
 
   return (
