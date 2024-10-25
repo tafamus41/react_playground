@@ -12,11 +12,19 @@ const handleDelete=(id)=>{
 const filteredList=appointments.filter(item=>item.id !== id)
 setAppointments(filteredList)
 }
+const handleDoubleClick = (id) => {
+  const updatedList = appointments.map((app) =>
+    app.id === id ? { ...app, consulted: !app.consulted } : app
+  );
+  setAppointments(updatedList);
+  localStorage.setItem("list", JSON.stringify(updatedList));
+};
+
 return (
     <main className="text-center mt-2">
       <h1 className="display-5 text-danger">CLARUS HOSPITAL</h1>
       <Doctors handleAdd={handleAdd} />
-      <AppointmentList appointments={appointments} handleDelete={handleDelete} />
+      <AppointmentList appointments={appointments} handleDelete={handleDelete} handleDoubleClick={handleDoubleClick} />
     </main>
   )
 }
