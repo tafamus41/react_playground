@@ -10,9 +10,9 @@ const AppointmentList = ({ appointments }) => {
         Appointment List
       </h3>
       {appointments.map(({ id, patient, consulted, doctor, day }) => (
-        <div>
-          <Row>
-            <Col>
+        <div className={consulted?"appointments consulted":"appointments"} >
+          <Row className="justify-content-between align-items-center" >
+            <Col md={6}>
               <h4>{patient}</h4>
               <h5>{doctor}</h5>
             </Col>
@@ -20,8 +20,8 @@ const AppointmentList = ({ appointments }) => {
               <h5>Date:{new Date(day).toLocaleDateString("tr")}</h5>
               <h4>Time:{new Date(day).toLocaleTimeString("tr")}</h4>
             </Col>
-            <Col>
-              <TiDelete/>
+            <Col className="text-end" >
+              <TiDelete className="text-danger display-3" type="button"/>
             </Col>
           </Row>
         </div>
