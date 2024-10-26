@@ -4,7 +4,7 @@ import notFound from "../img/notFound.jpeg";
 
 const NotFound = () => {
   return (
-    <Container>
+    <Container className="text-center">
       <img src={notFound} alt="" width="550px" />
       <button className="btn btn-info"> GO HOME</button>
     </Container>
