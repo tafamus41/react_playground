@@ -7,14 +7,16 @@ const MyNavbar = () => {
   return (
     <Navbar expand="lg" bg="light">
       <Container>
-        <Link>
+        <Link to="/">
           <img src={logo} alt="" />
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
+            <NavLink href="#home">Home</NavLink>
+            <NavLink href="#link">Link</NavLink>
+            <NavLink href="#home">Home</NavLink>
+            <NavLink href="#link">Link</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>
