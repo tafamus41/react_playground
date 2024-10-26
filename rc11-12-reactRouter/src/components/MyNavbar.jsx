@@ -13,10 +13,12 @@ const MyNavbar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <NavLink href="#home">Home</NavLink>
-            <NavLink href="#link">Link</NavLink>
-            <NavLink href="#home">Home</NavLink>
-            <NavLink href="#link">Link</NavLink>
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/">Teacher</NavLink>
+            <NavLink to="/">Courses</NavLink>
+            <NavLink to="/">Contact</NavLink>
+            <NavLink to="/">Paths</NavLink>
+            {/* <NavLink to="/">GitHub</NavLink> */}
           </Nav>
         </Navbar.Collapse>
       </Container>
