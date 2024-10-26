@@ -1,7 +1,18 @@
+import "bootstrap/dist/css/bootstrap.min.css"
+import {BrowserRouter, Route, Routes} from "react-router-dom"
+import Home from "./pages/Home";
+
 function App() {
   return (
     <div className="App">
-      <h1>Cohort 17</h1>
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route/>
+        <Route/>
+      </Routes>
+      </BrowserRouter>
+
     </div>
   );
 }
