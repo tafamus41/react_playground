@@ -6,6 +6,7 @@ const NotFound = () => {
   return (
     <Container>
       <img src={notFound} alt="" width="550px" />
+      <button className="btn btn-info"> GO HOME</button>
     </Container>
   );
 };
