@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+//!react-intro people benzeri
 const Teacher = () => {
-  const navigate = useNavigate();
+const navigate=useNavigate()
 
   const [people, setPeople] = useState([]);
   useEffect(() => {
@@ -10,6 +11,7 @@ const Teacher = () => {
       .get("https://jsonplaceholder.typicode.com/users")
       .then((res) => setPeople(res.data));
   }, []);
+
   return (
     <div className="container text-center mt-4">
       <div className="row">
@@ -20,9 +22,7 @@ const Teacher = () => {
             <img
               src={`https://api.dicebear.com/9.x/avataaars/svg?seed=${person.name}`}
               alt=""
-              onClick={() =>
-                navigate(`/teacher/${person.id}`, { state: { person } })
-              }
+            onClick={()=>navigate(`/teacher/${person.id}`, {state:{person}}) }
             />
 
             <h5>{person.name}</h5>
