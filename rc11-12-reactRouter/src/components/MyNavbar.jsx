@@ -1,7 +1,11 @@
-import React from "react";
-import { Container, Nav, Navbar } from "react-bootstrap";
-import { Link, NavLink } from "react-router-dom";
-import logo from "../img/logo.png";
+import React from 'react'
+import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Link, NavLink } from 'react-router-dom';
+
+import logo from "../img/logo.png"
+
+//!!!React ta 3 türlü link kullanılabilir. NavLink Link ve a etiketi.hangisini ne zaman kullanmalısınız? React uygulamanız içinde, etkinken stil gerektirmeyen bir bağlantı oluşturmak istiyorsanız, Link bileşenini kullanın. React uygulamanız içinde, etkin durumdayken stil gerektiren bir bağlantı oluşturmak istiyorsanız, NavLink bileşenini kullanın. Son olarak, React uygulamanızda harici bir sayfaya veya rota olmayan bir sayfaya bağlantı oluşturmak istiyorsanız, <a></a>  etiketini kullanın.
+
 
 const MyNavbar = () => {
   return (
@@ -37,9 +41,7 @@ const MyNavbar = () => {
               Courses
             </NavLink>
             <NavLink
-              style={({ isActive }) => ({
-                backgroundColor: isActive && "salmon",
-              })}
+              style={({ isActive }) => ({ backgroundColor: isActive && "salmon" })}
               to="/contact"
               className="nav-link"
             >
@@ -48,14 +50,13 @@ const MyNavbar = () => {
             <NavLink to="/paths" className="nav-link">
               Paths
             </NavLink>
-            <Nav.Link target="blank" href="https://github.com/tafamus41">
-              GitHub
-            </Nav.Link>
+
+            <Nav.Link target="blank" href="https://github.com/clarusway"> Github</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
   );
-};
+}
 
-export default MyNavbar;
+export default MyNavbar

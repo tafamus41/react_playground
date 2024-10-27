@@ -23,3 +23,5 @@ const Slider = () => {
     </Carousel>
   );
 }
+
+export default Slider
