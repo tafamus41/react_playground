@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useState } from "react";
 import Home from "./components/Home";
 import data from "./data";
 export const StudentContext = createContext();
