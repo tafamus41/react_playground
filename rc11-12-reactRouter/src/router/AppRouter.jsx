@@ -8,6 +8,7 @@ import ContactForm from "../pages/ContactForm";
 import Paths from "../pages/Paths";
 import NotFound from "../pages/NotFound";
 import PrivateRouter from "./PrivateRouter";
+import CardDetails from "../pages/CardDetails";
 const AppRouter = () => {
   return (
     <div>
@@ -20,13 +21,14 @@ const AppRouter = () => {
           <Route path="/courses" element={<PrivateRouter />}>
             <Route path="" element={<CourseCard />} />
           </Route>
+          <Route path="/courses/:name" element={<CardDetails/>} />
 
           <Route path="/contact" element={<PrivateRouter />}>
             <Route path="" element={<ContactForm />} />
           </Route>
 
           <Route path="/paths" element={<Paths />} />
-          
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

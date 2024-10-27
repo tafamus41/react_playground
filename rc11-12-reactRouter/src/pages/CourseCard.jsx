@@ -1,15 +1,14 @@
-import React from 'react'
-import { Button, Card, Col, Container, Row } from 'react-bootstrap';
-import data from "../data"
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import data from "../data";
+import { useNavigate } from "react-router-dom";
 const CourseCard = () => {
-    const navigate=useNavigate()
+  const navigate = useNavigate();
   return (
     <Container>
       <Row className="g-3 text-center">
         {data.map((a) => {
-          const{id,name,img,text}=a
-       
+          const { id, name, img, text } = a;
 
           return (
             <Col
@@ -17,27 +16,24 @@ const CourseCard = () => {
               key={id}
             >
               <Card style={{ width: "18rem" }}>
-                <Card.Img variant="top" 
-                src={img} 
-                />
+                <Card.Img variant="top" src={img} />
                 <Card.Body>
-                  <Card.Title className="text-danger">
-                    {name} 
-                    </Card.Title>
-                  <Card.Text>
-                    {text}
-                    </Card.Text>
+                  <Card.Title className="text-danger">{name}</Card.Title>
+                  <Card.Text>{text}</Card.Text>
                   <Button
-onClick={()=>navigate(`/courses/${name}`)}
-variant="primary">DETAILS</Button>
+                    onClick={() => navigate(`/courses/${name}`)}
+                    variant="primary"
+                  >
+                    DETAILS
+                  </Button>
                 </Card.Body>
               </Card>
             </Col>
           );
-         })} 
+        })}
       </Row>
     </Container>
-  )
-}
+  );
+};
 
-export default CourseCard
+export default CourseCard;
