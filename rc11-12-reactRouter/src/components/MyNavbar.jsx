@@ -13,7 +13,9 @@ const MyNavbar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <NavLink className="nav-link" to="/">Home</NavLink>
+            <NavLink 
+            style={({isActive})=> ({color:isActive&&"red"})}
+            className="nav-link" to="/">Home</NavLink>
             <NavLink  to="/teacher" className="nav-link" >Teacher</NavLink>
             <NavLink to="/courses" className="nav-link" >Courses</NavLink>
             <NavLink to="/contact" className="nav-link" >Contact</NavLink>
