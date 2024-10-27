@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import { Navigate, Outlet } from "react-router-dom";
 
 const PrivateRouter = () => {
-  return (
-    <div>PrivateRouter</div>
-  )
-}
+  const email = "seyranmustafa4@gmail.com";
+  const password = "1234";
+  return email === "seyranmustafa4@gmail.com" && password === "1234" ? (
+    <Outlet />
+  ) : (
+    <Navigate to="/" />
+  );
+};
 
-export default PrivateRouter
+export default PrivateRouter;
