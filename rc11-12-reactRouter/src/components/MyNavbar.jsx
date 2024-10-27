@@ -51,7 +51,7 @@ const MyNavbar = () => {
               Paths
             </NavLink>
 
-            <Nav.Link target="blank" href="https://github.com/clarusway"> Github</Nav.Link>
+            <Nav.Link target="blank" href="https://github.com/tafamus41"> Github</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
