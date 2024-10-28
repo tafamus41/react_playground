@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="dark:bg-gray-600 min-h-screen">
       <Navbar />
-      <h1 className="text-2xl text-center text-purple-700 font-bold dark:text-white font-bold">Merhaba Tailwind</h1>
+      <h1 className="">Merhaba Tailwind</h1>
       <ProfileCard />
       {/* <Typography /> */}
       {/* <SpacingAndSizing /> */}
