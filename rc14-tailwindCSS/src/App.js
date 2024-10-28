@@ -1,9 +1,9 @@
-import FlexAndResponsive from "./components/FlexAndResponsive";
-import HoverAndFocus from "./components/HoverAndFocus";
+// import FlexAndResponsive from "./components/FlexAndResponsive";
+// import HoverAndFocus from "./components/HoverAndFocus";
 import Navbar from "./components/Navbar";
 import ProfileCard from "./components/ProfileCard";
-import SpacingAndSizing from "./components/SpacingAndSizing";
-import Typography from "./components/Typography";
+// import SpacingAndSizing from "./components/SpacingAndSizing";
+// import Typography from "./components/Typography";
 
 function App() {
   return (
