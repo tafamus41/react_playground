@@ -22,6 +22,7 @@ const SpacingAndSizing = () => {
       <div className="my-2">
         <button className="bg-indigo-500 w-20 rounded-full py-2 mx-2">KAYDET</button>
         <button className="bg-indigo-500 w-1/2 rounded-full py-2 mx-2">KAYDET</button>
+        <button className="bg-indigo-500 w-1/2 max-w-[500px] rounded-full py-2 mx-2">KAYDET</button>
 
       </div>
     </div>
