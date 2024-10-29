@@ -1,26 +1,35 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import SearchInput from "../components/SearchInput";
 import ProductCard from "../components/ProductCard";
 import Loading from "../components/Loading";
-// import { useProductsContext } from "../context/ProductProvider";
+import SearchInput from "../components/SearchInput";
+import { useProductsContext } from "../context/ProductProvider";
 import ScrollToTop from "../components/ScrollToTop";
 
 const Products = () => {
-  const [products, setProducts] = useState([]);
-  const [search, setSearch] = useState("");
-  const [loading, setLoading] = useState(false);
-  const getData = async () => {
-    try {
-      const { data } = await axios.get(
-        `https://dummyjson.com/products/search?q=${search}`
-      );
-      setProducts(data.products);
-    } catch (error) {}
-  };
-  useEffect(() => {
-    getData();
-  }, []);
+  // const [products, setProducts] = useState([]);
+  // const [search, setSearch] = useState("");
+  // const [loading, setLoading] = useState(false);
+
+  // const getData = async () => {
+  //   setLoading(true);
+  //   try {
+  //     const { data } = await axios.get(
+  //       `https://dummyjson.com/products/search?q=${search}`
+  //     );
+  //     setProducts(data.products);
+  //   } catch (error) {
+  //     console.log(error);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   getData();
+  // }, [search]); //! search state'i değiştikçe getData fonksiyonu çalışsın
+
+  const { loading, products, setSearch } = useProductsContext();
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8 ">
