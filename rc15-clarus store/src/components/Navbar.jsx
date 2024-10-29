@@ -1,8 +1,14 @@
 import React from 'react'
-
+import logo from "../assets/logo.png"
 const Navbar = () => {
   return (
-    <div>Navbar</div>
+    <nav className='bg-navbarColor md:text-sm'>
+      <div>
+        <div>
+          <a href="https://clarusway.com" target='true' className='flex items-center' ><img src={logo} alt="clarusway" width={50} height={50} /><span>Clarusway</span></a>
+        </div>
+      </div>
+    </nav>
   )
 }
 
