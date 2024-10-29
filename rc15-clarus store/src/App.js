@@ -1,9 +1,9 @@
-import Login from "./pages/Login";
+import AppRouter from "./router/AppRouter";
+
 
 function App() {
   return (
-
-    <Login/>
+    <AppRouter/>
     // <div className="min-h-screen bg-slate-700 text-white text-4xl flex justify-center gap-2 items-center">
     //   <span className="animate-bounce">🏀</span>
     //   <h1 className="animate-pulse">
