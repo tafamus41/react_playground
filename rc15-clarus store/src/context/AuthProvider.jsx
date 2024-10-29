@@ -9,7 +9,7 @@ const AuthProvider = ({ children }) => {
 
   const login =(info)=>{
     setUser(info)
-    navigate("/")
+    navigate("/dashboard")
   }
   return (
     <AuthContext.Provider value={{ user,login }}>{children}</AuthContext.Provider>
