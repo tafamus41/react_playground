@@ -1,9 +1,12 @@
+import AuthProvider from "./context/AuthProvider";
 import AppRouter from "./router/AppRouter";
-
 
 function App() {
   return (
-    <AppRouter/>
+    <AuthProvider>
+      <AppRouter />
+    </AuthProvider>
+
     // <div className="min-h-screen bg-slate-700 text-white text-4xl flex justify-center gap-2 items-center">
     //   <span className="animate-bounce">🏀</span>
     //   <h1 className="animate-pulse">
