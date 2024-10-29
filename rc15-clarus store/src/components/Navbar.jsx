@@ -21,7 +21,7 @@ const Navbar = () => {
   const [show, setShow] = useState(false);
   const location = useLocation();
   const { logout } = useContext(AuthContext);
-  // console.log(location);
+  
   return (
     <nav className="bg-navbarColor md:text-sm ">
       <div className="gap-x-14 items-center max-w-screen-xl mx-auto px-4 md:flex md:px-8 ">
