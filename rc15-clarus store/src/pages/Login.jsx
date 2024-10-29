@@ -8,6 +8,10 @@ const Login = () => {
           <span className="w-[6px] h-[39px] bg-yellow-500"></span>
           <h1 className="text-[22px] sm:text-[32px] font-montserrat font-[700] uppercase">Clarus Store</h1>
         </div>
+        <div>
+          <h3>SIGN IN</h3>
+          <p>Enter your credetentials to access your account</p>
+        </div>
       </div>
     </div>
   );
