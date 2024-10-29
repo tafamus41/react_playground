@@ -11,8 +11,12 @@ const AuthProvider = ({ children }) => {
     setUser(info)
     navigate("/dashboard")
   }
+const logout=()=>{
+  setUser(null)
+}
+
   return (
-    <AuthContext.Provider value={{ user,login }}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={{ user,login,logout }}>{children}</AuthContext.Provider>
   );
 };
 
