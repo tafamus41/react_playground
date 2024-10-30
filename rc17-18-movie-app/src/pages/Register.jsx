@@ -16,7 +16,7 @@ const Register = () => {
   const{email,password,firstName,lastName}=info
   const handleSubmit = (e) => {
     e.preventDefault()
-    // createUser(email, password);
+    createUser(email, password);
   };
   return (
     <div className="flex justify-center">
