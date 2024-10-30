@@ -4,17 +4,16 @@ import { getAuth } from "firebase/auth";
 // TODO: Replace the following with your app's Firebase project configuration
 // See: https://firebase.google.com/docs/web/learn-more#config-object
 const firebaseConfig = {
-    apiKey: "AIzaSyBdkACl-yqW6_eY93jOfQXahVqabn4daYc",
-    authDomain: "movie-app-mustafa41.firebaseapp.com",
-    projectId: "movie-app-mustafa41",
-    storageBucket: "movie-app-mustafa41.firebasestorage.app",
-    messagingSenderId: "699563035322",
-    appId: "1:699563035322:web:44a7f68951f199e14c1083"
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId,
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
 
 // Initialize Firebase Authentication and get a reference to the service
 export const auth = getAuth(app);
