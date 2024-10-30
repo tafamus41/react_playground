@@ -11,8 +11,8 @@ import avatar from "../assets/icons/avatar.png";
 import { useAuthContext } from "../context/AuthProvider";
 
 const Navbar = () => {
-  const {logOut}=useAuthContext()
-  const currentUser = { displayName: "tafamus41" };
+  const {logOut,currentUser}=useAuthContext()
+  
   return (
     <>
       <Disclosure
