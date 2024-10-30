@@ -8,8 +8,10 @@ import {
 import { Link } from "react-router-dom";
 import SwitchButton from "./SwitchButton";
 import avatar from "../assets/icons/avatar.png";
+import { useAuthContext } from "../context/AuthProvider";
 
 const Navbar = () => {
+  const {logOut}=useAuthContext()
   const currentUser = { displayName: "tafamus41" };
   return (
     <>
@@ -61,7 +63,7 @@ const Navbar = () => {
                     </Link>
                   </MenuItem>
                   <MenuItem>
-                    <span className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 cursor-pointer">
+                    <span onClick={logOut} className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 cursor-pointer">
                       Log out
                     </span>
                   </MenuItem>
