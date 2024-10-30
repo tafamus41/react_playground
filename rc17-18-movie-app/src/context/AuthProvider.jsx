@@ -1,7 +1,6 @@
 import { createUserWithEmailAndPassword } from 'firebase/auth'
 import React, { createContext, useContext, useState } from 'react'
 import {auth} from "../auth/Firebase"
-// import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 export const AuthContext=createContext()
 
@@ -20,12 +19,9 @@ const createUser=async(email,password)=>{
     console.log(error)
   }
 }
-
 const values={currentUser,createUser};
-
   return (
     <AuthContext.Provider value={values}>{children}</AuthContext.Provider>
   )
 }
-
 export default AuthProvider
