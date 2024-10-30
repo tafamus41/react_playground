@@ -24,7 +24,7 @@ useEffect(() => {
 
 const signIn=async(email,password)=>{
   try {
-  let userCredential=  await signInWithEmailAndPassword(auth, email, password)
+  await signInWithEmailAndPassword(auth, email, password)
   navigate("/")
   toastSuccessNotify("Logged in successfully")
   } catch (error) {
@@ -33,7 +33,7 @@ const signIn=async(email,password)=>{
 }
 const createUser=async(email,password)=>{
   try {
-  let userCredential=  await createUserWithEmailAndPassword(auth, email, password)
+  await createUserWithEmailAndPassword(auth, email, password)
   navigate("/")
   toastSuccessNotify("Registered successfully")
   } catch (error) {
