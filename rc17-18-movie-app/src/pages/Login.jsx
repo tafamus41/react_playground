@@ -59,7 +59,7 @@ const Login = () => {
               </Link>
             </div>
             <button className="btn-danger" type="submit">
-              Register
+              Sıgn In
             </button>
             <button
               className="flex justify-between text-center items-center btn-danger"
