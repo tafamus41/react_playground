@@ -10,24 +10,27 @@ import SwitchButton from "./SwitchButton";
 import avatar from "../assets/icons/avatar.png";
 import { useAuthContext } from "../context/AuthProvider";
 
-const Navbar = () => {
+export default function Navbar() {
   const { logOut, currentUser } = useAuthContext();
-
+  // const currentUser = { displayName: "felix franko" };
+  // const currentUser = false;
   return (
     <>
       <Disclosure
         as="nav"
-        className="bg-neutral-100 dark:bg-gray-900 dark:text-white fixed top-0 w-full z-20"
+        className="bg-neutral-100 dark:bg-gray-900 dark:text-white fixed top-0 w-full z-20 "
       >
-        <div className="mx-auto px-2 sm:px-6 lg:px-8">
+        <div className="mx-auto  px-2 sm:px-6 lg:px-8">
           <div className="relative flex h-16 items-center justify-between">
             <Link className="pr-2 text-2xl font-semibold" to="/">
-              {" "}
               Movie App
             </Link>
+
             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
               {currentUser && (
-                <h5 className="mr-2 capitalize">{currentUser?.displayName}</h5>
+                <h5 className="mr-2 capitalize ">
+                  {currentUser?.displayName}{" "}
+                </h5>
               )}
               <SwitchButton />
               {/* Profile dropdown */}
@@ -64,7 +67,7 @@ const Navbar = () => {
                         >
                           Login
                         </Link>
-                      </MenuItem>{" "}
+                      </MenuItem>
                     </>
                   )}
                   {currentUser && (
@@ -86,6 +89,4 @@ const Navbar = () => {
       <div className="h-16"></div>
     </>
   );
-};
-
-export default Navbar;
+}
