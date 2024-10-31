@@ -8,7 +8,6 @@ import { toastWarnNotify } from "../helper/ToastNotify";
 const API_KEY = process.env.REACT_APP_TMDB_KEY;
 const SEARCH_API = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=`;
 
-
 const Main = () => {
   const [searchTerm, setSearchTerm] = useState("");
  const {movies,loading,getMovies}= useMovieContext()
