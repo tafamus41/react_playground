@@ -10,21 +10,22 @@ const SEARCH_API = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}
 
 const Main = () => {
   const [searchTerm, setSearchTerm] = useState("");
- const {movies,loading,getMovies}= useMovieContext()
- const { currentUser } = useAuthContext();
- const handleSubmit = (e) => {
-  e.preventDefault();
-  if (searchTerm.trim() && currentUser) {
-    getMovies(SEARCH_API + searchTerm);
-  } else if (!currentUser) {
-    toastWarnNotify("Please log in to search a movie!");
-  } else {
-    toastWarnNotify("Please enter a text!");
-  }
-};
+  const { movies, loading, getMovies } = useMovieContext();
+  const { currentUser } = useAuthContext();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (searchTerm.trim() && currentUser) {
+      getMovies(SEARCH_API + searchTerm);
+    } else if (!currentUser) {
+      toastWarnNotify("Please log in to search a movie!");
+    } else {
+      toastWarnNotify("Please enter a text!");
+    }
+  };
 
-  return <>
-  <form onSubmit={handleSubmit} className="flex justify-center p-2">
+  return (
+    <>
+      <form onSubmit={handleSubmit} className="flex justify-center p-2">
         <input
           type="search"
           className="w-80 h-8 rounded-md p-1 m-2"
@@ -33,14 +34,15 @@ const Main = () => {
         />
         <button className="btn-danger-bordered">Search</button>
       </form>
-  <div>
-  {loading ? (
+      <div className="flex flex-wrap justify-center ">
+        {loading ? (
           <Loading />
         ) : (
           movies.map((movie) => <MovieCard key={movie.id} {...movie} />)
         )}
-  </div>
-  </>;
+      </div>
+    </>
+  );
 };
 
 export default Main;

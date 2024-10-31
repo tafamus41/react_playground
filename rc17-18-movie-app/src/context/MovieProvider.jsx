@@ -26,7 +26,7 @@ useEffect(() => {
   };
 
 
-  return <MovieContext.Provider value={{movies,loading,getMovies}}>{children}</MovieContext.Provider>;
+  return (<MovieContext.Provider value={{movies,loading,getMovies}}>{children}</MovieContext.Provider>);
 };
 
 export default MovieProvider;
