@@ -35,7 +35,7 @@ const AuthProvider = ({ children }) => {
   const createUser = async (email, password, displayName) => {
     try {
       //? yeni bir kullanıcı oluşturmak için kullanılan firebase metodu
-      let userCredential = await createUserWithEmailAndPassword(
+      await createUserWithEmailAndPassword(
         auth,
         email,
         password
@@ -57,7 +57,7 @@ const AuthProvider = ({ children }) => {
   const signIn = async (email, password) => {
     try {
       //? mevcut kullanıcının giriş yapması için kullanılan firebase metodu
-      let userCredential = await signInWithEmailAndPassword(
+      await signInWithEmailAndPassword(
         auth,
         email,
         password
@@ -106,7 +106,6 @@ const AuthProvider = ({ children }) => {
     //? Açılır pencere ile giriş yapılması için kullanılan firebase metodu
     signInWithPopup(auth, provider)
       .then((result) => {
-        console.log(result);
         navigate("/");
         toastSuccessNotify("Logged in successfully");
       })
@@ -128,8 +127,6 @@ const AuthProvider = ({ children }) => {
         toastErrorNotify(error.message);
       });
   };
-
-  console.log(currentUser);
   const values = {
     currentUser,
     createUser,

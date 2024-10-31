@@ -20,7 +20,7 @@ useEffect(() => {
     setLoading(true);
     axios
       .get(URL)
-      .then((res) => console.log(res.data.results))
+      .then((res) => setMovies(res.data.results))
       .catch((err) => console.log(err))
       .finally(() => setLoading(false));
   };
