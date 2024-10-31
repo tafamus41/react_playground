@@ -39,6 +39,7 @@ const Navbar = () => {
                       alt=""
                       src={currentUser?.photoURL || avatar}
                       className="h-8 w-8 rounded-full"
+                      referrerPolicy="no-referrer"
                     />
                   </MenuButton>
                 </div>

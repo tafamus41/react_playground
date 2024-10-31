@@ -1,8 +1,8 @@
-import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth'
+import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth'
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import {auth} from "../auth/Firebase"
 import { useNavigate } from 'react-router-dom';
-import { toastErrorNotify, toastSuccessNotify } from '../helper/ToastNotify';
+import { toastErrorNotify, toastSuccessNotify, toastWarnNotify } from '../helper/ToastNotify';
 
 export const AuthContext=createContext()
 
@@ -76,8 +76,17 @@ const googleProvider=()=>{
       });
   };
 
-
-const values={currentUser,createUser,signIn,logOut,googleProvider};
+const forgotPassword=(email)=>{
+  sendPasswordResetEmail(auth, email)
+      .then(() => {
+        // Password reset email sent!
+        toastWarnNotify("Please check your mail box!");
+      })
+      .catch((error) => {
+        toastErrorNotify(error.message);
+      });
+}
+const values={currentUser,createUser,signIn,logOut,googleProvider,forgotPassword};
   return (
     <AuthContext.Provider value={values}>{children}</AuthContext.Provider>
   )
