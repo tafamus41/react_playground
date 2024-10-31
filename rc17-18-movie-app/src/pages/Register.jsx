@@ -13,10 +13,11 @@ const Register = () => {
   const handleChange=(e)=>{
     setInfo({...info,[e.target.name]:e.target.value})
   }
-  const{email,password}=info
+  const{email,password,firstName,lastName}=info
   const handleSubmit = (e) => {
+    const displayName=`${firstName}${lastName}`
     e.preventDefault()
-    createUser(email, password);
+    createUser(email, password,displayName);
   };
   return (
     <div className="flex justify-center">

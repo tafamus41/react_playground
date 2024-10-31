@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth'
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from 'firebase/auth'
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import {auth} from "../auth/Firebase"
 import { useNavigate } from 'react-router-dom';
@@ -31,9 +31,10 @@ const signIn=async(email,password)=>{
     toastErrorNotify(error.message)
   }
 }
-const createUser=async(email,password)=>{
+const createUser=async(email,password,displayName)=>{
   try {
   await createUserWithEmailAndPassword(auth, email, password)
+  await updateProfile(auth.currentUser,{displayName})
   navigate("/")
   toastSuccessNotify("Registered successfully")
   } catch (error) {
