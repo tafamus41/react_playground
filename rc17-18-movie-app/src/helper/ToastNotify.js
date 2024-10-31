@@ -32,3 +32,4 @@ export const toastErrorNotify = (msg) => {
     progress: undefined,
   });
 };
+

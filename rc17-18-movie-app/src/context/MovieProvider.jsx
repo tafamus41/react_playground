@@ -1,18 +1,19 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import axios from "axios"
+import axios from "axios";
 export const MovieContext = createContext();
 
 export const useMovieContext = () => {
   return useContext(MovieContext);
 };
+
 const API_KEY = process.env.REACT_APP_TMDB_KEY;
-const FEATURED_API = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=`;
+const FEATURED_API = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}`;
 
 const MovieProvider = ({ children }) => {
+  const [movies, setMovies] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-const [movies,setMovies]=useState([])
-const [loading, setLoading] = useState(false);
-useEffect(() => {
+  useEffect(() => {
     getMovies(FEATURED_API);
   }, []);
 
@@ -25,8 +26,11 @@ useEffect(() => {
       .finally(() => setLoading(false));
   };
 
-
-  return (<MovieContext.Provider value={{movies,loading,getMovies}}>{children}</MovieContext.Provider>);
+  return (
+    <MovieContext.Provider value={{ movies, loading, getMovies }}>
+      {children}
+    </MovieContext.Provider>
+  );
 };
 
 export default MovieProvider;

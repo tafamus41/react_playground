@@ -4,15 +4,17 @@ import { useAuthContext } from "../context/AuthProvider";
 import { Link } from "react-router-dom";
 
 const Login = () => {
-  const { signIn,googleProvider,forgotPasword } = useAuthContext();
+  const { signIn, googleProvider, forgotPassword } = useAuthContext();
   const [info, setInfo] = useState({
     email: "",
     password: "",
   });
-  const handleChange = (e) => {
+
+  const handleChange = (e) =>
     setInfo({ ...info, [e.target.name]: e.target.value });
-  };
-  const { email, password} = info;
+
+  const { email, password } = info;
+
   const handleSubmit = (e) => {
     e.preventDefault();
     signIn(email, password);
@@ -25,14 +27,15 @@ const Login = () => {
             <h2 className="text-red-main text-2xl font-[500] text-center tracking-[0.1em] mb-3">
               Sign In
             </h2>
+
             <div className="relative z-0 w-full mb-6 group">
               <input
                 name="email"
                 className="peer"
                 type="email"
                 placeholder=" "
-                onChange={handleChange}
                 required
+                onChange={handleChange}
               />
               <label htmlFor="floating_email">Email</label>
             </div>
@@ -42,15 +45,16 @@ const Login = () => {
                 className="peer"
                 type="password"
                 placeholder=" "
-                onChange={handleChange}
                 required
+                onChange={handleChange}
               />
               <label htmlFor="floating_password">Password</label>
             </div>
             <div className="flex justify-between">
-              <span 
-              onClick={()=>forgotPasword(email)}
-              className="py-3 font-[0.75em] cursor-pointer decoration-none text-gray-500 hover:text-[#ff4b45]">
+              <span
+                onClick={() => forgotPassword(email)}
+                className="py-3 font-[0.75em] cursor-pointer decoration-none text-gray-500 hover:text-[#ff4b45]"
+              >
                 Forgot Password
               </span>
               <Link
@@ -61,7 +65,7 @@ const Login = () => {
               </Link>
             </div>
             <button className="btn-danger" type="submit">
-              Sıgn In
+              Login
             </button>
             <button
               className="flex justify-between text-center items-center btn-danger"

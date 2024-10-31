@@ -3,21 +3,23 @@ import GoogleIcon from "../assets/icons/GoogleIcon";
 import { useAuthContext } from "../context/AuthProvider";
 
 const Register = () => {
-  const { createUser,googleProvider } = useAuthContext();
+  const { createUser, googleProvider } = useAuthContext();
   const [info, setInfo] = useState({
     firstName: "",
     lastName: "",
     email: "",
     password: "",
   });
-  const handleChange=(e)=>{
-    setInfo({...info,[e.target.name]:e.target.value})
-  }
-  const{email,password,firstName,lastName}=info
+
+  const handleChange = (e) =>
+    setInfo({ ...info, [e.target.name]: e.target.value });
+
+  const { email, password, firstName, lastName } = info;
+
   const handleSubmit = (e) => {
-    const displayName=`${firstName}${lastName}`
-    e.preventDefault()
-    createUser(email, password,displayName);
+    const displayName = `${firstName} ${lastName}`;
+    e.preventDefault();
+    createUser(email, password, displayName);
   };
   return (
     <div className="flex justify-center">
@@ -55,8 +57,8 @@ const Register = () => {
                 className="peer"
                 type="email"
                 placeholder=" "
-                onChange={handleChange}
                 required
+                onChange={handleChange}
               />
               <label htmlFor="floating_email">Email</label>
             </div>
@@ -66,8 +68,8 @@ const Register = () => {
                 className="peer"
                 type="password"
                 placeholder=" "
-                onChange={handleChange}
                 required
+                onChange={handleChange}
               />
               <label htmlFor="floating_password">Password</label>
             </div>

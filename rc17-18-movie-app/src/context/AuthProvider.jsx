@@ -106,6 +106,7 @@ const AuthProvider = ({ children }) => {
     //? Açılır pencere ile giriş yapılması için kullanılan firebase metodu
     signInWithPopup(auth, provider)
       .then((result) => {
+        console.log(result);
         navigate("/");
         toastSuccessNotify("Logged in successfully");
       })
@@ -127,6 +128,8 @@ const AuthProvider = ({ children }) => {
         toastErrorNotify(error.message);
       });
   };
+
+  console.log(currentUser);
   const values = {
     currentUser,
     createUser,

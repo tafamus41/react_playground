@@ -1,13 +1,15 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom';
-import { useAuthContext } from '../context/AuthProvider';
+import React from "react";
+import { useAuthContext } from "../context/AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 const IMG_API = "https://image.tmdb.org/t/p/w1280";
 const defaultImage =
   "https://images.unsplash.com/photo-1581905764498-f1b60bae941a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80";
+
 const MovieCard = ({ title, poster_path, overview, vote_average, id }) => {
-    const { currentUser } = useAuthContext();
+  const { currentUser } = useAuthContext();
   const navigate = useNavigate();
+
   const getVoteClass = () => {
     if (vote_average >= 8) {
       return "green";
@@ -37,7 +39,7 @@ const MovieCard = ({ title, poster_path, overview, vote_average, id }) => {
         <p>{overview}</p>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default MovieCard
+export default MovieCard;
