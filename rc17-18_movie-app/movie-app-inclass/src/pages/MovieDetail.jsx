@@ -34,6 +34,7 @@ const MovieDetail = () => {
     release_date,
     vote_count,
   } = movieDetails;
+  console.log(movieId);
   return (
     <div className="md:container px-10 mx-auto py-5">
       <h1 className="text-center text-white text-3xl">{title}</h1>
@@ -81,4 +82,3 @@ const MovieDetail = () => {
 };
 
 export default MovieDetail;
-

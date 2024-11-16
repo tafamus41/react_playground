@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useMovieContext } from "../context/MovieProvider";
 import MovieCard from "../components/MovieCard";
 import Loading from "../components/Loading";
-import { toastWarnNotify } from "../helper/ToastNotify";
+import { toastWarnNotify } from "../helpers/ToastNotify";
 import { useAuthContext } from "../context/AuthProvider";
 
 const API_KEY = process.env.REACT_APP_TMDB_KEY;
